@@ -1,6 +1,8 @@
 const container = document.querySelector(".container")
 
 const makeGrid = () => {
+  let squaresFlush = document.querySelectorAll(".square")
+  Array.from(squaresFlush).map(sq => sq.remove())
   const input = parseInt(prompt("Choose the number of squares per each side"))
 
   for ( let i = 0; i < input * input; i++) {
@@ -19,12 +21,11 @@ const makeGrid = () => {
   container.style.display = "flex"
   container.style.flexDirection = "row"
   container.style.flexWrap = "wrap"
-  container.style.width = `${input * 31.7}px`
+  container.style.width = `${input * 34}px`
 
   Array.from(squares).map(sq => {
   sq.addEventListener("mouseover", (e) => {
     e.target.style.backgroundColor = "black"
-    console.log("event happened")
   })
 })
 }
